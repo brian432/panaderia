@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <title>Panaderia</title>
+</head>
+
+<body>
+    <header id="header" class="padw flex">
+        <div id="div-logo">LOGO</div>
+        <nav>
+            <ul id="menu" class="flex">
+                <li><a href="#sobre-nosotros">Sobre Nosotros</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#productos">Productos</a></li>
+            </ul>
+            <div id="hamburguesa">
+                <div class="linea1"></div>
+                <div class="linea2"></div>
+                <div class="linea3"></div>
+            </div>
+        </nav>
+    </header>
+    <section id="parallax" class="padw">
+        <p data-aos="fade-left">Lorem ipsum</p>
+        <h1 data-aos="fade-in">Panaderia & Pastas</h1>
+        <p id="descripcion-inicio" data-aos="fade-right" >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur iusto autem
+            voluptatibus illo suscipit
+            eveniet.
+        </p>
+        <i class="fas fa-arrow-down"></i>
+    </section>
+    <section id="sobre-nosotros" class="padw">
+        <div id="img-about" class="flex">
+            <div id="about-img1" class="about-img shadow radius"></div>
+            <div id="about-img2" class="about-img shadow radius"></div>
+        </div>
+        <div id="descripcion">
+            <h2>Lorem ipsum dolor sit amet consectetur</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium ea quod corporis facilis sit, sunt
+                quos nemo?
+            </p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit ullam soluta incidunt atque voluptatibus
+                corrupti pariatur ex maxime deleniti totam reprehenderit ducimus repellendus asperiores quaerat
+                Velit omnis perspiciatis atque
+            </p>
+        </div>
+    </section>
+    <section id="contacto" class="padw flex">
+        <h2>Contacto</h2>
+        <form action="https://formspree.io/f/{form_id}" method="post">
+            <input id="name" type="text" name="name" placeholder="Nombre" class="formulario" required />
+            <input id="email" type="email" name="email" placeholder="Email" class="formulario" required />
+            <textarea id="message" name="message" placeholder="Mensaje..." class="formulario" required></textarea>
+            <button type="submit" class="radius button">Enviar</button>
+        </form>
+    </section>
+    <section id="productos" class="padw">
+        <h2>Nuestros Productos</h2>
+        <div id="cuadros">
+            <div class="cuadros-productos">
+                <div class="div-img1 shadow radius"></div>
+                <p>Mayo 15, 2021</p>
+                <h3>TIME FOR BREAKFAST</h3>
+                <p>Sweet</p>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    At voluptatem deleniti facilis nihil tenetur natus, explicabo autem
+                    voluptas ea temporibus omnis libero quis qui cum ad amet doloribus, accusamus eius?
+                </p>
+            </div>
+            <div class="cuadros-productos">
+                <div class="div-img2 shadow radius"></div>
+                <p>Mayo 15, 2021</p>
+                <h3>TIME FOR BREAKFAST</h3>
+                <p>Sweet</p>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    At voluptatem deleniti facilis nihil tenetur natus, explicabo autem
+                    voluptas ea temporibus omnis libero quis qui cum ad amet doloribus, accusamus eius?
+                </p>
+            </div>
+            <div class="cuadros-productos">
+                <div class="div-img3 shadow radius"></div>
+                <p>Mayo 15, 2021</p>
+                <h3>TIME FOR BREAKFAST</h3>
+                <p>Sweet</p>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    At voluptatem deleniti facilis nihil tenetur natus, explicabo autem
+                    voluptas ea temporibus omnis libero quis qui cum ad amet doloribus, accusamus eius?
+                </p>
+            </div>
+        </div>
+    </section>
+    <footer class="padw flex">
+        <div>LOGO</div>
+        <div id="redes">
+            <h3>Nuestras redes</h3>
+            <div id="redes-sociales" class="flex">
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-twitter"></i>
+            </div>
+        </div>
+        <div id="enlaces">
+            <a href="#sobre-nosotros">Sobre Nosotros</a>
+            <a href="#contacto">Contacto</a>
+            <a href="#productos">Productos</a>
+        </div>
+    </footer>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    const hamburguesa=document.getElementById("hamburguesa");
+    const menu=document.getElementById("menu");
+    const header=document.getElementById("header");
+    
+    hamburguesa.addEventListener("click", ()=>{
+        hamburguesa.classList.toggle("toggle");
+        menu.classList.toggle("fadeInRight")
+    })
+    window.addEventListener("scroll", ()=>{
+        window.scrollY >0 ? header.classList.add("fadeOut"):header.classList.add("fadeIn");
+        if(window.scrollY>0){
+            header.classList.add("fadeOutUp");
+        }else{
+            header.classList.remove("fadeOutUp");
+            header.classList.add("fadeInDown")
+        }
+    })
+    AOS.init({
+        duration:2000
+    });
+  </script>
+</body>
+
+</html>
