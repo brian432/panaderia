@@ -19,6 +19,7 @@ body{
     max-width: 1920px;
     min-width: 320px;
     margin: 0 auto;
+    overflow-x: hidden;
 }
 
 /*estilos globales*/
@@ -172,7 +173,7 @@ h1{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    padding-top:2rem;
+    padding-top:4rem;
     padding-bottom: 2rem;
 }
 form{
@@ -288,6 +289,9 @@ footer{
 }
 
 /*javascript clases*/
+.nav-active{
+    transform: translateX(0%)!important;
+}
 .toggle .linea1{
     transform: rotate(-45deg) translate(-5px, 6px);
 }
@@ -362,67 +366,6 @@ footer{
     }
 } 
 
-.fadeInRight {
-    display: flex!important;
-    -webkit-animation-name: fadeInRight;
-    animation-name: fadeInRight;
-    -webkit-animation-duration: .5s;
-    animation-duration: .5s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-}
-@-webkit-keyframes fadeInRight {
-    0% {
-        opacity: 0;
-        -webkit-transform: translate3d(100%, 0, 0);
-        transform: translate3d(100%, 0, 0);
-    }
-    100% {
-        opacity: 1;
-        -webkit-transform: none;
-        transform: none;
-    }
-}
-@keyframes fadeInRight {
-    0% {
-        opacity: 0;
-        -webkit-transform: translate3d(100%, 0, 0);
-        transform: translate3d(100%, 0, 0);
-    }
-    100% {
-        opacity: 1;
-        -webkit-transform: none;
-        transform: none;
-    }
-}
-.fadeOutRight {
-    -webkit-animation-name: fadeOutRight;
-    animation-name: fadeOutRight;
-    -webkit-animation-duration: 1s;
-    animation-duration: 1s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-    }
-    @-webkit-keyframes fadeOutRight {
-    0% {
-    opacity: 1;
-    }
-    100% {
-    opacity: 0;
-    -webkit-transform: translate3d(100%, 0, 0);
-    transform: translate3d(100%, 0, 0);
-    }
-    }
-    @keyframes fadeOutRight {
-    0% {
-    opacity: 1;
-    }
-    100% {
-    opacity: 0;
-    -webkit-transform: translate3d(100%, 0, 0);
-    transform: translate3d(100%, 0, 0);
-    }
-    } 
 
 /*----------------------------*/
 
@@ -447,7 +390,7 @@ footer{
         height: max-content;
         flex-direction: column-reverse;
         text-align: center;
-        padding-top: 3rem;
+        padding-top: 4rem;
         padding-bottom: 3rem;
     }
     #descripcion{
@@ -479,20 +422,22 @@ footer{
         gap:3rem;
     }
     header{
-        background-color: var(--azul);
+        background: rgba(4, 4, 4, 0.911);
+        backdrop-filter: blur(4px);
     }
     #menu{
-        display: none;
-        position: absolute;
-        right: 0;
-        top: 55px;
-        width: 50%;
-        height:200px;
-        background-color: var(--azul)!important;
+        position:absolute;
+        right: 0px;
+        top:7vh;
+        height: 92vh;
+        width: 100%!important;
+        background: rgba(4, 4, 4, 0.911);
+        backdrop-filter: blur(4px);
         flex-direction: column;
-        text-align: center;
-        padding: 1rem 0;
-        border-radius: 5px;
+        align-items: center;
+        justify-content: space-around!important;
+        transform: translateX(100%);
+        transition: transform .5s ease-in;
     }
     #hamburguesa{
         display:block;

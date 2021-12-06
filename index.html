@@ -17,9 +17,10 @@
         <div id="div-logo">LOGO</div>
         <nav>
             <ul id="menu" class="flex">
-                <li><a href="#sobre-nosotros">Sobre Nosotros</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-                <li><a href="#productos">Productos</a></li>
+                <li><a href="#parallax" class="links">Home</a></li>
+                <li><a href="#sobre-nosotros" class="links">Sobre Nosotros</a></li>
+                <li><a href="#contacto" class="links">Contacto</a></li>
+                <li><a href="#productos" class="links">Productos</a></li>
             </ul>
             <div id="hamburguesa">
                 <div class="linea1"></div>
@@ -118,11 +119,20 @@
     const hamburguesa=document.getElementById("hamburguesa");
     const menu=document.getElementById("menu");
     const header=document.getElementById("header");
+    const links=document.querySelectorAll(".links");
     
     hamburguesa.addEventListener("click", ()=>{
         hamburguesa.classList.toggle("toggle");
-        menu.classList.toggle("fadeInRight")
+        menu.classList.toggle("nav-active");
     })
+
+    links.forEach((elemento, index)=>{
+        elemento.addEventListener("click",()=>{
+            menu.classList.toggle("nav-active");
+            hamburguesa.classList.toggle("toggle");
+        })
+    })
+
     window.addEventListener("scroll", ()=>{
         window.scrollY >0 ? header.classList.add("fadeOut"):header.classList.add("fadeIn");
         if(window.scrollY>0){
